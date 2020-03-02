@@ -9,18 +9,23 @@
 import UIKit
 
 class ToDoDetailTableViewController: UITableViewController {
+    
 
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+
 
     @IBOutlet weak var noteView: UITextView!
     
     @IBOutlet weak var datePicker: UITableViewCell!
     
-    @IBOutlet weak var nameField: UIView!
+    @IBOutlet weak var nameField: UITextView!
     
+    var toDoItem: String!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameField.text = toDoItem
+    }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         let isPresentingInAddMode = presentingViewController is UINavigationController
